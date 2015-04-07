@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>衣服饰品</key>
+	<array>
+		<string>衣服裤子</string>
+		<string>鞋帽包包</string>
+	</array>
+	<key>其他杂项</key>
+	<array>
+		<string>其它支出</string>
+		<string>意外丢失</string>
+		<string>烂账损失</string>
+	</array>
+	<key>食品酒水</key>
+	<array>
+		<string>早午晚餐</string>
+		<string>烟酒茶</string>
+		<string>水果零食</string>
+	</array>
+	<key>居家物业</key>
+	<array>
+		<string>日常用品</string>
+		<string>水电煤气</string>
+		<string>房租</string>
+		<string>物业管理</string>
+		<string>维修保养</string>
+	</array>
+	<key>通讯交流</key>
+	<array>
+		<string>座机费</string>
+		<string>手机费</string>
+		<string>上网费</string>
+		<string>邮寄费</string>
+	</array>
+	<key>休闲娱乐</key>
+	<array>
+		<string>运动健身</string>
+		<string>腐败聚会</string>
+		<string>休闲玩乐</string>
+		<string>宠物宝贝</string>
+		<string>旅游度假</string>
+	</array>
+	<key>学习进修</key>
+	<array>
+		<string>书报杂志</string>
+		<string>培训进修</string>
+		<string>数码装备</string>
+	</array>
+	<key>人情往来</key>
+	<array>
+		<string>送礼请客</string>
+		<string>孝敬家长
+</string>
+		<string>还人钱物</string>
+		<string>慈善捐助</string>
+	</array>
+	<key>医疗保健</key>
+	<array>
+		<string>药品费</string>
+		<string>补品费</string>
+		<string>美容费</string>
+		<string>治疗费</string>
+	</array>
+	<key>金融保险</key>
+	<array>
+		<string>银行手续</string>
+		<string>投资亏损</string>
+		<string>按揭还款</string>
+		<string>消费税收</string>
+		<string>利息支出</string>
+		<string>赔偿罚款</string>
+	</array>
+</dict>
+</plist>
