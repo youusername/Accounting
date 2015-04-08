@@ -16,7 +16,10 @@
 #import "billManagement.h"
 #import "settingManagement.h"
 #import "payout.h"
-@interface ViewController ()
+@interface ViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+    UIButton *IconButton;
+    settingManagement*settingM;
+}
 @property(strong,nonatomic)FMDatabase*Fdb;
 @property(strong,nonatomic)billManagement*billM;
 @property(strong,nonatomic)NSArray*BillArray;
@@ -35,13 +38,26 @@
 {
 
     [super viewDidLoad];
-
+    self.title=@"欢迎使用";
     billM=[[billManagement alloc]init];
     self.tableOutlet.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.navigationItem.hidesBackButton=YES;
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"view.png"]];
-    
-    
+    self.view.window.frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    IconButton=[UIButton buttonWithType:UIButtonTypeCustom];
+    [IconButton setFrame:CGRectMake(-5, -5, 40, 40)];
+//    [IconButton setTitle:@"登出" forState:UIControlStateNormal];
+//    [IconButton setFont:[UIFont systemFontOfSize:15]];
+//    [IconButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    if (settingM==nil) {
+        settingM=[[settingManagement alloc]init];
+    }
+    [IconButton.layer setMasksToBounds:YES];
+    [IconButton.layer setCornerRadius:20.0];
+    [IconButton setImage:[settingM getUserIcon] forState:UIControlStateNormal];
+    [IconButton addTarget:self action:@selector(changeIcon:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem*leftBarItem = [[UIBarButtonItem alloc]initWithCustomView:IconButton];
+    self.navigationItem.leftBarButtonItem=leftBarItem;
     
 //-----------------自定义记一笔button-------------------------
 //    UIGlossyButton *b;
@@ -52,7 +68,7 @@
 //-------------------自定义记一笔button------------------------
 //    self.navigationController.navigationBar.barStyle=UIBarStyleBlackOpaque;
     
-    
+/*
     UISwipeGestureRecognizer *recognizer; 
     
     recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
@@ -88,9 +104,10 @@
     
     [[self view] addGestureRecognizer:recognizer];
 
-
+*/
 	// Do any additional setup after loading the view, typically from a nib.
 }
+
 -(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
     UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
@@ -122,6 +139,70 @@
     }
     
 }
+-(void)changeIcon:(id)obj{
+    UIActionSheet * choosePhotoActionSheet;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        choosePhotoActionSheet = [[UIActionSheet alloc]initWithTitle:NSLocalizedString(@"图片选取方式", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"取消", @"") destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"从相机", @""),NSLocalizedString(@"从相册", @""), nil ];
+        
+    }else {
+        choosePhotoActionSheet = [[UIActionSheet alloc]initWithTitle:NSLocalizedString(@"图片选取方式", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"取消", @"") destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"从相册中选择", @""), nil ];
+        
+        //        take_photo_from_library Replace 从相册中选择
+    }
+    [choosePhotoActionSheet showInView:self.view];
+}
+#pragma mark - UIActionSheetDelegate
+
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSUInteger sourceType = 0;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        switch (buttonIndex) {
+            case 0:
+                sourceType = UIImagePickerControllerSourceTypeCamera;
+                break;
+            case 1:
+                sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                break;
+            case 2:
+                return;
+        }
+    }else {
+        if (buttonIndex == 1) {
+            return;
+        }else {
+            sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        }
+    }
+    UIImagePickerController * imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = YES;
+    imagePickerController.sourceType = sourceType;
+    [self presentViewController:imagePickerController animated:YES completion:^{}];
+//    [self presentModalViewController:imagePickerController animated:YES];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [self dismissViewControllerAnimated:YES completion:^{}];
+//    [picker dismissModalViewControllerAnimated:YES];
+//    self.photo = [info objectForKey:UIImagePickerControllerEditedImage];
+    [IconButton setImage:[info objectForKey:UIImagePickerControllerEditedImage] forState:UIControlStateNormal];
+    [settingM setUserIcon:[info objectForKey:UIImagePickerControllerEditedImage]];
+}
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:^{}];
+//    [self dismissModalViewControllerAnimated:YES];
+}
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 - (void)viewDidUnload
 {
     [self setMyImage:nil];
@@ -131,10 +212,7 @@
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -146,7 +224,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.BillArray=[self.billM getRecentlyPayouDate];
     [self.tableOutlet reloadData];
-
+    if (settingM==nil) {
+        settingM=[[settingManagement alloc]init];
+    }
+    [IconButton setImage:[settingM getUserIcon] forState:UIControlStateNormal];
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

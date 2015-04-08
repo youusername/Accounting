@@ -333,7 +333,7 @@
     if (tag > 3) {
         rect.origin.y = -44.0f * (tag - 3);
     } else {
-        rect.origin.y = 0;
+        rect.origin.y = 65;
     }
     self.view.frame = rect;
     [UIView commitAnimations];

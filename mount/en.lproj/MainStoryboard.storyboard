@@ -86,27 +86,21 @@
                                     <action selector="DeleteData:" destination="sww-0m-tNO" eventType="touchUpInside" id="NEz-js-E6p"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="开发成员：" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nJ6-pz-S6Y">
-                                <rect key="frame" x="27" y="245" width="275" height="42"/>
+                            <button opaque="NO" tag="1111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J5k-9A-uoD" customClass="UIGlossyButton">
+                                <rect key="frame" x="27" y="245" width="255" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="联系我们:214644496@qq.com" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="5G0-yD-2x1">
-                                <rect key="frame" x="27" y="331" width="275" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="张靖、颜奥林、夏铁真、邱友彬、谢鑫" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="10" id="bTj-eF-O1j">
-                                <rect key="frame" x="62" y="272" width="202" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="退出登录">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userIcon:" destination="sww-0m-tNO" eventType="touchUpInside" id="z78-fS-ktl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
@@ -192,6 +186,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="TextFieldName" destination="YMZ-2N-CUX" id="XN5-wZ-dOe"/>
                         <outlet property="TextFieldStr" destination="hbJ-n8-U4o" id="87k-xt-amI"/>
@@ -200,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4B-dQ-bEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278" y="1625"/>
+            <point key="canvasLocation" x="-131" y="1584"/>
         </scene>
         <!--父类别管理-->
         <scene sceneID="COk-HY-M3o">
@@ -466,6 +461,9 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="gys-6e-b9M"/>
+                    <connections>
+                        <segue destination="2" kind="push" id="EoK-2g-Vdg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhC-7B-qrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -726,7 +724,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="欢迎使用" id="lFS-fe-4QT"/>
+                    <navigationItem key="navigationItem" id="lFS-fe-4QT"/>
                     <connections>
                         <outlet property="myImage" destination="liC-AS-FWy" id="7hA-4A-JsA"/>
                         <outlet property="tableOutlet" destination="dFN-KJ-J94" id="9Kl-p5-gkK"/>
@@ -1033,6 +1031,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="JY1-lV-MCF"/>
                     <connections>
                         <outlet property="BudgetLabel" destination="asg-Xt-6At" id="b0W-lk-C3y"/>
@@ -1077,4 +1076,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="gtb-XW-UkE"/>
+    </inferredMetricsTieBreakers>
 </document>

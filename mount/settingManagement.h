@@ -33,4 +33,7 @@
 //还原账单数据库
 -(void)restorePayoutDataBase;
 -(void)DeleteSQLiteData;
+
+-(void)setUserIcon:(UIImage*)image;
+-(UIImage*)getUserIcon;
 @end

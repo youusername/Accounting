@@ -12,7 +12,10 @@
 #import "payout.h"
 #import "personnelViewController.h"
 #import "dateViewController.h"
-@interface displayViewController ()
+@interface displayViewController (){
+    UIView*popView;
+    UIButton*shareButotn;
+}
 
 @end
 
@@ -133,6 +136,63 @@
 
     
 }
+-(UIImage *)getImageFromView:(UIView *)orgView{
+    UIGraphicsBeginImageContextWithOptions(orgView.frame.size, YES, [UIScreen mainScreen].scale);
+    //UIGraphicsBeginImageContextWithOptions(self.view.frame.size, YES, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context,0,0);
+    [orgView.layer renderInContext:UIGraphicsGetCurrentContext()];//renderInContext呈现接受者及其子范围到指定的上下文
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();//返回一个基于当前图形上下文的图片
+    
+    UIGraphicsEndImageContext();//移除栈顶的基于当前位图的图形上下文
+    return viewImage;
+}
+-(void)share:(id)sender{
+    id<ISSContent> publishContent = [ShareSDK content:@""
+                                       defaultContent:@"默认内容"
+                                                image:[ShareSDK pngImageWithImage:[self getImageFromView:popView]]
+                                                title:@"ShareSDK"
+                                                  url:@""
+                                          description:@"这是一条演示信息"
+                                            mediaType:SSPublishContentMediaTypeImage];
+    //1+创建弹出菜单容器（iPad必要）
+    id<ISSContainer> container = [ShareSDK container];
+    [container setIPadContainerWithView:shareButotn arrowDirect:UIPopoverArrowDirectionUp];
+    
+    //2、弹出分享菜单
+    [ShareSDK showShareActionSheet:container
+                         shareList:nil
+                           content:publishContent
+                     statusBarTips:YES
+                       authOptions:nil
+                      shareOptions:nil
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                
+                                //可以根据回调提示用户。
+                                if (state == SSResponseStateSuccess)
+                                {
+                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享成功"
+                                                                                    message:nil
+                                                                                   delegate:self
+                                                                          cancelButtonTitle:@"OK"
+                                                                          otherButtonTitles:nil, nil];
+                                    [alert show];
+                                }
+                                else if (state == SSResponseStateFail)
+                                {
+                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败"
+                                                                                    message:[NSString stringWithFormat:@"失败描述：%@",[error errorDescription]]
+                                                                                   delegate:self
+                                                                          cancelButtonTitle:@"OK"
+                                                                          otherButtonTitles:nil, nil];
+                                    [alert show];
+                                }
+                            }];
+    
+    
+    
+}
+
 
 -(void)SwipeGestureRecognizer{
     //滑动代码
@@ -172,6 +232,14 @@
     NSString*Budgetstr=[NSString stringWithFormat:@"%d",bg];
     self.BudgetLabel.text=Budgetstr;
     [super viewWillAppear:animated];
+    
+    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 42, 22)];
+
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [button addTarget:self action:@selector(exit) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem*leftBarItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem=leftBarItem;
 }
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -246,6 +314,14 @@
                           completionHandler:^{
                               NSLog(@"Modal view closed.");
                           }];
+    UIButton*but=[UIButton buttonWithType:UIButtonTypeCustom];
+    [but setFrame:CGRectMake(100, 50, 20, 20)];
+    [but setBackgroundColor:[UIColor orangeColor]];
+    [but setTag:index];
+    [but addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
+    [Nib addSubview:but];
+    shareButotn=but;
+    popView=Nib;
 }
 -(void)ASDepthModalViewDismiss{
     [ASDepthModalViewController dismiss];

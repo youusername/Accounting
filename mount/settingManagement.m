@@ -7,7 +7,7 @@
 //
 
 #import "settingManagement.h"
-#define kDatabaseName   @"mount.sqlite"
+//#define kDatabaseName   @"mount.sqlite"
 
 @implementation settingManagement
 {
@@ -71,6 +71,23 @@
         [Fdb executeUpdate:sql];
     }
    
+}
+-(void)setUserIcon:(UIImage*)image{
+    NSData*data=UIImagePNGRepresentation(image);
+    [UserDefaults setValue:data forKey:[UserDefaults objectForKey:@"user"]];
+}
+-(UIImage*)getUserIcon{
+    NSString*userName=[UserDefaults objectForKey:@"user"];
+    NSData* data=[UserDefaults objectForKey:userName];
+    UIImage*image;
+    if (data==nil) {
+        image=[UIImage imageNamed:@"404error"];
+    }else{
+        image=[UIImage imageWithData:data];
+    }
+    
+    
+    return image;
 }
 //代入父类别id 添加子类别
 -(void)AddSubType:(NSNumber*)type_id subtype:(NSString*)subtypeStr{

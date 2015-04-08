@@ -33,9 +33,9 @@
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"setting.png"]];
     settingM=[[settingManagement alloc]init];
     //-----------------------返回-------------------
-    self.navigationItem.hidesBackButton=YES;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回"  style:UIBarButtonItemStylePlain target:self action:@selector(backBtnAction)];//UIBarButtonItem
-    //-----------------------返回-------------------
+//    self.navigationItem.hidesBackButton=YES;
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回"  style:UIBarButtonItemStylePlain target:self action:@selector(backBtnAction)];//UIBarButtonItem
+//    //-----------------------返回-------------------
 
 //-----------------------自定义button-------------------
     UIGlossyButton *b;
@@ -60,14 +60,21 @@
 //    b.invertGraidentOnSelected = YES;
 //-----------------------自定义button-------------------
     
-    UISwipeGestureRecognizer *recognizer; 
-    
-    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
-    
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    
-    [[self view] addGestureRecognizer:recognizer];
+//    UISwipeGestureRecognizer *recognizer; 
+//    
+//    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+//    
+//    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+//    
+//    [[self view] addGestureRecognizer:recognizer];
 	// Do any additional setup after loading the view.
+}
+- (IBAction)userIcon:(id)sender {
+    [UserDefaults setValue:@"" forKey:@"user"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:[NSBundle mainBundle]];
+    loginViewController *t = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+    UINavigationController* center = [[UINavigationController alloc] initWithRootViewController:t];
+    [self presentViewController:center animated:YES completion:nil];
 }
 
 -(void)backBtnAction{

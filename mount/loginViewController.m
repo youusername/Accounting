@@ -8,6 +8,7 @@
 
 #import "loginViewController.h"
 #import "ViewController.h"
+#import "AppDelegate.h"
 @interface loginViewController (){
     NSMutableDictionary*dic;
 }
@@ -67,16 +68,33 @@
     
     if ([user1 isEqualToString:user2]&&[pass1 isEqualToString:pass2]) {
         [UserDefaults setValue:user1 forKey:@"user"];
-        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-
-            
-            ViewController*svc=[storyboard instantiateViewControllerWithIdentifier:@"aView"];
-        [self.navigationController pushViewController:svc animated:YES];
+        self.navigationItem.backBarButtonItem=nil;
+        AppDelegate*app=[UIApplication sharedApplication].delegate;
+        app.window.rootViewController = [self generateControllerStack];
+        [app.window makeKeyAndVisible];
     }else{
         SHOW_ALERT(@"用户或密码错误", @"");
     }
 }
-
+- (IIViewDeckController*)generateControllerStack {
+    UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    displayViewController*display=[storyboard instantiateViewControllerWithIdentifier:@"display"];
+    settingViewController*set=[storyboard instantiateViewControllerWithIdentifier:@"setting"];
+    ViewController*view=[storyboard instantiateViewControllerWithIdentifier:@"aView"];
+    
+    UINavigationController* leftViewController = [[UINavigationController alloc] initWithRootViewController:set];
+    UINavigationController* rightViewController = [[UINavigationController alloc] initWithRootViewController:display];
+    UINavigationController* center = [[UINavigationController alloc] initWithRootViewController:view];
+    
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:center
+                                                                                    leftViewController:leftViewController
+                                                                                   rightViewController:rightViewController];
+    deckController.rightSize = 10;
+    deckController.leftSize=10;
+    deckController.shadowEnabled=NO;
+    [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
+    return deckController;
+}
 /*
 #pragma mark - Navigation
 

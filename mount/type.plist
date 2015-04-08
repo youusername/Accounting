@@ -63,6 +63,11 @@
 		<string>美容费</string>
 		<string>治疗费</string>
 	</array>
+	<key>转账</key>
+	<array>
+		<string>借款</string>
+		<string>还贷</string>
+	</array>
 	<key>金融保险</key>
 	<array>
 		<string>银行手续</string>

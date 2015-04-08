@@ -84,5 +84,7 @@
         
         [self.settingM insertIntoBudgetTable:[NSNumber numberWithInt:[self.TextFieldStr.text intValue]]];
     }
+    SHOW_ALERT(@"添加成功", @"");
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

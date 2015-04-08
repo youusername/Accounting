@@ -8,7 +8,7 @@
 
 #import "billManagement.h"
 //#import "DatebaseManagement.h"
-#define kDatabaseName   [NSString stringWithFormat:@"%@.%@",[UserDefaults objectForKey:@"user"],@"sqlite"]
+//#define kDatabaseName   [NSString stringWithFormat:@"%@.%@",[UserDefaults objectForKey:@"user"],@"sqlite"]
 #define kTypeName   @"type.plist"
  
 @implementation billManagement
@@ -45,7 +45,7 @@
     [Fdb executeUpdate:@"CREATE TABLE IF NOT EXISTS PAYOUT(ID INTEGER PRIMARY KEY AUTOINCREMENT,amount double,date date,type text,subtype text,comment text,image blob,personnel text)"];
     [Fdb executeUpdate:@"CREATE TABLE IF NOT EXISTS personnel(ID INTEGER PRIMARY KEY AUTOINCREMENT,personnel text)"];
     [Fdb executeUpdate:@"CREATE TABLE IF NOT EXISTS type(ID INTEGER PRIMARY KEY AUTOINCREMENT,type text)"];
-        [Fdb executeUpdate:@"CREATE TABLE IF NOT EXISTS subtype(ID INTEGER PRIMARY KEY AUTOINCREMENT,type_id text,subtype text)"];
+    [Fdb executeUpdate:@"CREATE TABLE IF NOT EXISTS subtype(ID INTEGER PRIMARY KEY AUTOINCREMENT,type_id text,subtype text)"];
 //    [Fdb executeUpdate:@"CREATE TABLE IF NOT EXISTS subtype(ID INTEGER PRIMARY KEY AUTOINCREMENT,type_ID integer REFERENCES type(ID),subtype text)"];
     [Fdb executeUpdate:@"CREATE TABLE IF NOT EXISTS budget(ID INTEGER PRIMARY KEY AUTOINCREMENT,budget text)"];
     if ([[self getPayoutType] count]<1) {
