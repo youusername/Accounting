@@ -9,7 +9,7 @@
 #import "loginViewController.h"
 #import "ViewController.h"
 #import "AppDelegate.h"
-@interface loginViewController (){
+@interface loginViewController ()<IIViewDeckControllerDelegate>{
     NSMutableDictionary*dic;
 }
 @property (weak, nonatomic) IBOutlet UIButton *login;
@@ -46,6 +46,11 @@
     if (dic==nil) {
         dic=[[NSMutableDictionary alloc]init];
         [UserDefaults setValue:dic forKey:@"userInfo"];
+    }
+}
+-(void)viewDeckController:(IIViewDeckController *)viewDeckController willOpenViewSide:(IIViewDeckSide)viewDeckSide animated:(BOOL)animated{
+    if (viewDeckSide==IIViewDeckRightSide) {
+        [[(UINavigationController*)viewDeckController.rightController topViewController] viewWillAppear:YES];
     }
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -92,6 +97,7 @@
     deckController.rightSize = 10;
     deckController.leftSize=10;
     deckController.shadowEnabled=NO;
+    deckController.delegate=self;
     [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
     return deckController;
 }

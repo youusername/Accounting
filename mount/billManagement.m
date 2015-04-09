@@ -60,10 +60,12 @@
     NSString*sql1=[NSString stringWithFormat:@"insert into personnel(personnel) values ('老婆')"];
     NSString*sql2=[NSString stringWithFormat:@"insert into personnel(personnel) values ('家庭')"];
     NSString*sql3=[NSString stringWithFormat:@"insert into personnel(personnel) values ('女儿')"];
+//    NSString*sql4=[NSString stringWithFormat:@"insert into budget(budget) values ('5000')"];
     [Fdb executeUpdate:sql];
     [Fdb executeUpdate:sql1];
     [Fdb executeUpdate:sql2];
     [Fdb executeUpdate:sql3];
+//    [Fdb executeUpdate:sql4];
 }
 
 -(void)InitPayoutType{

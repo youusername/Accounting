@@ -45,6 +45,7 @@
 		0479CA2C1AD522E4009ED9DE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0479CA2B1AD522E4009ED9DE /* libxml2.dylib */; };
 		0479CA2E1AD522EE009ED9DE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0479CA2D1AD522EE009ED9DE /* CFNetwork.framework */; };
 		0479CA301AD52316009ED9DE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0479CA2F1AD52316009ED9DE /* MobileCoreServices.framework */; };
+		0479CA321AD61877009ED9DE /* f045@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0479CA311AD61877009ED9DE /* f045@2x.png */; };
 		049080C3175B2FDF00266881 /* displayManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 049080C2175B2FDF00266881 /* displayManagement.m */; };
 		049C42F217708A61009B9682 /* ASDepthModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049C42F117708A61009B9682 /* ASDepthModal.xib */; };
 		049C42F417708C36009B9682 /* pattern1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 049C42F317708C36009B9682 /* pattern1.jpg */; };
@@ -158,6 +159,7 @@
 		0479CA2B1AD522E4009ED9DE /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		0479CA2D1AD522EE009ED9DE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0479CA2F1AD52316009ED9DE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0479CA311AD61877009ED9DE /* f045@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f045@2x.png"; sourceTree = "<group>"; };
 		049080C1175B2FDF00266881 /* displayManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = displayManagement.h; sourceTree = "<group>"; };
 		049080C2175B2FDF00266881 /* displayManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = displayManagement.m; sourceTree = "<group>"; };
 		049C42F117708A61009B9682 /* ASDepthModal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASDepthModal.xib; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				041572CB177A0D4D00DF483B /* payout.png */,
 				049E7A5C1785311B004D2DCC /* long.png */,
 				041572C31779F1F600DF483B /* view.png */,
+				0479CA311AD61877009ED9DE /* f045@2x.png */,
 				041572C7177A041500DF483B /* display.png */,
 				0479C9711AD3BDE9009ED9DE /* RegistrationViewController.h */,
 				0479C9721AD3BDE9009ED9DE /* RegistrationViewController.m */,
@@ -681,6 +684,7 @@
 				04D7FB061767859A00CF054F /* Default@2x.png in Resources */,
 				04D7FB071767859A00CF054F /* GenericSeparator@2x.png in Resources */,
 				04D7FB081767859A00CF054F /* KeyboardBackgroundTextured@2x.png in Resources */,
+				0479CA321AD61877009ED9DE /* f045@2x.png in Resources */,
 				04D7FB091767859A00CF054F /* KeyboardNumericEntryKeyBackspaceGlyphTextured@2x.png in Resources */,
 				04D7FB0A1767859A00CF054F /* KeyboardNumericEntryKeyPressedTextured@2x.png in Resources */,
 				04D7FB0B1767859A00CF054F /* KeyboardNumericEntryKeyTextured@2x.png in Resources */,

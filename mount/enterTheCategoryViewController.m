@@ -54,6 +54,10 @@
     }else if ([self.number intValue]==4){
         
         self.TitleLabel.text=@"欢迎进预算添加！";
+        UILabel*label=[[UILabel alloc]initWithFrame:CGRectMake(self.TitleLabel.frame.origin.x, self.TitleLabel.frame.origin.y+40, 150, 40)];
+        long int budget =[self.settingM selectBudget];
+        label.text=[NSString stringWithFormat:@"本月预算为:%ld",budget];
+        [self.view addSubview:label];
         self.TextFieldName.text=@"请输入预算金额：";
     }
 }

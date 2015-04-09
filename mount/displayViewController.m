@@ -315,8 +315,9 @@
                               NSLog(@"Modal view closed.");
                           }];
     UIButton*but=[UIButton buttonWithType:UIButtonTypeCustom];
-    [but setFrame:CGRectMake(100, 50, 20, 20)];
-    [but setBackgroundColor:[UIColor orangeColor]];
+    [but setFrame:CGRectMake(Nib.frame.size.width-50,Nib.frame.size.height-40, 40, 35)];
+//    [but setBackgroundColor:[UIColor orangeColor]];
+    [but setImage:[UIImage imageNamed:@"f045"] forState:UIControlStateNormal];
     [but setTag:index];
     [but addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
     [Nib addSubview:but];

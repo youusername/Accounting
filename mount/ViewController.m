@@ -43,7 +43,7 @@
     self.tableOutlet.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.navigationItem.hidesBackButton=YES;
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"view.png"]];
-    self.view.window.frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    
     IconButton=[UIButton buttonWithType:UIButtonTypeCustom];
     [IconButton setFrame:CGRectMake(-5, -5, 40, 40)];
 //    [IconButton setTitle:@"登出" forState:UIControlStateNormal];
@@ -222,6 +222,7 @@
     return 1;
 }
 -(void)viewWillAppear:(BOOL)animated{
+    self.view.window.frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.BillArray=[self.billM getRecentlyPayouDate];
     [self.tableOutlet reloadData];
     if (settingM==nil) {

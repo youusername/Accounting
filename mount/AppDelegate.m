@@ -32,7 +32,9 @@
         //            ViewController *t = [storyboard instantiateViewControllerWithIdentifier:@"aView"];
         if (IIViewDeck==nil) {
             IIViewDeck=[self generateControllerStack];
+            
         }
+        IIViewDeck.delegate=self;
         deckController=IIViewDeck;
 //        [self.navigationController pushViewController:IIViewDeck animated:NO];
     }
@@ -44,6 +46,12 @@
     //2.1 代码初始化社交平台的方法
     [self initializePlat];
     return YES;
+}
+
+-(void)viewDeckController:(IIViewDeckController *)viewDeckController willOpenViewSide:(IIViewDeckSide)viewDeckSide animated:(BOOL)animated{
+    if (viewDeckSide==IIViewDeckRightSide) {
+        [[(UINavigationController*)viewDeckController.rightController topViewController] viewWillAppear:YES];
+    }
 }
 -(void)initializePlat{
     [ShareSDK connectSinaWeiboWithAppKey:@"568898243"
