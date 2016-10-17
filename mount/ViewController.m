@@ -16,6 +16,7 @@
 #import "billManagement.h"
 #import "settingManagement.h"
 #import "payout.h"
+#import "WebViewController.h"
 @interface ViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UIButton *IconButton;
     settingManagement*settingM;
@@ -58,6 +59,15 @@
     [IconButton addTarget:self action:@selector(changeIcon:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem*leftBarItem = [[UIBarButtonItem alloc]initWithCustomView:IconButton];
     self.navigationItem.leftBarButtonItem=leftBarItem;
+    
+    UIButton*buttonf=[UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonf setFrame:CGRectMake(0, 0, 40, 40)];
+    [buttonf setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [buttonf setTitle:@"财经" forState:UIControlStateNormal];
+    [buttonf addTarget:self action:@selector(pushWebVC) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem*rightBarItem = [[UIBarButtonItem alloc]initWithCustomView:buttonf];
+    self.navigationItem.rightBarButtonItem=rightBarItem;
+    
     
 //-----------------自定义记一笔button-------------------------
 //    UIGlossyButton *b;
@@ -107,7 +117,11 @@
 */
 	// Do any additional setup after loading the view, typically from a nib.
 }
-
+-(void)pushWebVC{
+    WebViewController*web=[[WebViewController alloc]init];
+    web.view.backgroundColor=[UIColor whiteColor];
+    [self.navigationController pushViewController:web animated:YES];
+}
 -(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
     UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
@@ -229,7 +243,11 @@
         settingM=[[settingManagement alloc]init];
     }
     [IconButton setImage:[settingM getUserIcon] forState:UIControlStateNormal];
+    [self.viewDeckController setPanningMode:IIViewDeckFullViewPanning];
+}
+-(void)viewWillDisappear:(BOOL)animated{
     
+    [self.viewDeckController setPanningMode:IIViewDeckNoPanning];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

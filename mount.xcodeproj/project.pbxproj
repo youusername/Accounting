@@ -13,6 +13,7 @@
 		041572CA177A0BBC00DF483B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 041572C9177A0BBC00DF483B /* add.png */; };
 		041572CC177A0D4D00DF483B /* payout.png in Resources */ = {isa = PBXBuildFile; fileRef = 041572CB177A0D4D00DF483B /* payout.png */; };
 		04439BC01773728100B429BE /* 404error.png in Resources */ = {isa = PBXBuildFile; fileRef = 04439BBF1773728100B429BE /* 404error.png */; };
+		045B2C011AF75C0800D1557B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045B2C001AF75C0800D1557B /* WebViewController.m */; };
 		0479C9701AD3BAA2009ED9DE /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479C96F1AD3BAA2009ED9DE /* loginViewController.m */; };
 		0479C9731AD3BDE9009ED9DE /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479C9721AD3BDE9009ED9DE /* RegistrationViewController.m */; };
 		0479C97B1AD4BAAC009ED9DE /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479C9761AD4BAAC009ED9DE /* IISideController.m */; };
@@ -46,6 +47,9 @@
 		0479CA2E1AD522EE009ED9DE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0479CA2D1AD522EE009ED9DE /* CFNetwork.framework */; };
 		0479CA301AD52316009ED9DE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0479CA2F1AD52316009ED9DE /* MobileCoreServices.framework */; };
 		0479CA321AD61877009ED9DE /* f045@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0479CA311AD61877009ED9DE /* f045@2x.png */; };
+		0479CA341AD62A0B009ED9DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0479CA331AD62A0B009ED9DE /* Images.xcassets */; };
+		0479CA371AD62A6A009ED9DE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0479CA351AD62A6A009ED9DE /* icon.png */; };
+		0479CA381AD62A6A009ED9DE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0479CA361AD62A6A009ED9DE /* icon@2x.png */; };
 		049080C3175B2FDF00266881 /* displayManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 049080C2175B2FDF00266881 /* displayManagement.m */; };
 		049C42F217708A61009B9682 /* ASDepthModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049C42F117708A61009B9682 /* ASDepthModal.xib */; };
 		049C42F417708C36009B9682 /* pattern1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 049C42F317708C36009B9682 /* pattern1.jpg */; };
@@ -80,8 +84,6 @@
 		8397561E17543A1C00AF24B7 /* budgetManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8397561D17543A1C00AF24B7 /* budgetManagement.m */; };
 		8397A66417535424008E7F09 /* billManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8397A66317535424008E7F09 /* billManagement.m */; };
 		8397A6671753550F008E7F09 /* settingManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8397A6661753550F008E7F09 /* settingManagement.m */; };
-		839BA52B175D922E0080DA3A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 839BA52A175D922E0080DA3A /* icon.png */; };
-		839BA52D175D92470080DA3A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 839BA52C175D92470080DA3A /* icon.png */; };
 		83A8D2491761CF9A006DFCBF /* personnelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A8D2481761CF9A006DFCBF /* personnelViewController.m */; };
 		83A8D24C1761D711006DFCBF /* dateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A8D24B1761D711006DFCBF /* dateViewController.m */; };
 		83AD0F7D174951BB00DCD545 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AD0F74174951BB00DCD545 /* FMDatabase.m */; };
@@ -118,6 +120,8 @@
 		041572C9177A0BBC00DF483B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		041572CB177A0D4D00DF483B /* payout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payout.png; sourceTree = "<group>"; };
 		04439BBF1773728100B429BE /* 404error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 404error.png; sourceTree = "<group>"; };
+		045B2BFF1AF75C0800D1557B /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		045B2C001AF75C0800D1557B /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		0479C96E1AD3BAA2009ED9DE /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		0479C96F1AD3BAA2009ED9DE /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		0479C9711AD3BDE9009ED9DE /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
@@ -160,6 +164,9 @@
 		0479CA2D1AD522EE009ED9DE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0479CA2F1AD52316009ED9DE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		0479CA311AD61877009ED9DE /* f045@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f045@2x.png"; sourceTree = "<group>"; };
+		0479CA331AD62A0B009ED9DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0479CA351AD62A6A009ED9DE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		0479CA361AD62A6A009ED9DE /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		049080C1175B2FDF00266881 /* displayManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = displayManagement.h; sourceTree = "<group>"; };
 		049080C2175B2FDF00266881 /* displayManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = displayManagement.m; sourceTree = "<group>"; };
 		049C42F117708A61009B9682 /* ASDepthModal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASDepthModal.xib; sourceTree = "<group>"; };
@@ -209,8 +216,6 @@
 		8397A66317535424008E7F09 /* billManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = billManagement.m; sourceTree = "<group>"; };
 		8397A6651753550F008E7F09 /* settingManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingManagement.h; sourceTree = "<group>"; };
 		8397A6661753550F008E7F09 /* settingManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingManagement.m; sourceTree = "<group>"; };
-		839BA52A175D922E0080DA3A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		839BA52C175D92470080DA3A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		83A8D2471761CF9A006DFCBF /* personnelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personnelViewController.h; sourceTree = "<group>"; };
 		83A8D2481761CF9A006DFCBF /* personnelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personnelViewController.m; sourceTree = "<group>"; };
 		83A8D24A1761D711006DFCBF /* dateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dateViewController.h; sourceTree = "<group>"; };
@@ -429,11 +434,11 @@
 			isa = PBXGroup;
 			children = (
 				04439BBF1773728100B429BE /* 404error.png */,
-				839BA52C175D92470080DA3A /* icon.png */,
 				83D428F21740C574008A952D /* deposit.png */,
-				839BA52A175D922E0080DA3A /* icon.png */,
 				830239DA1769591F009A8DC7 /* left-direction.png */,
 				830239DB1769591F009A8DC7 /* right-direction.png */,
+				0479CA351AD62A6A009ED9DE /* icon.png */,
+				0479CA361AD62A6A009ED9DE /* icon@2x.png */,
 				04D7FAF71767859A00CF054F /* BackgroundTexture@2x.png */,
 				04D7FAF81767859A00CF054F /* Default-568h@2x.png */,
 				04D7FAF91767859A00CF054F /* Default.png */,
@@ -571,6 +576,8 @@
 				838BD6F81743BCC200E185F0 /* billViewController.m */,
 				837A5258177ACCC000A3622B /* guideViewController.h */,
 				837A5259177ACCC000A3622B /* guideViewController.m */,
+				045B2BFF1AF75C0800D1557B /* WebViewController.h */,
+				045B2C001AF75C0800D1557B /* WebViewController.m */,
 				0479C97E1AD4F47F009ED9DE /* ShareSDK */,
 				0479C9741AD4BAAC009ED9DE /* ViewDeck */,
 				83DAC0AC177BC15000ED9E21 /* Display */,
@@ -582,6 +589,7 @@
 				83AD0F72174951BB00DCD545 /* src */,
 				83AD0F9817496BA300DCD545 /* XYPieChart */,
 				83919C0A174569A300E6BE12 /* image */,
+				0479CA331AD62A0B009ED9DE /* Images.xcassets */,
 				83AE3E041731EDB8007D6A99 /* Supporting Files */,
 			);
 			path = mount;
@@ -674,14 +682,14 @@
 				83919C10174569B400E6BE12 /* background@2x.png in Resources */,
 				83919C11174569B400E6BE12 /* male.png in Resources */,
 				83919C12174569B400E6BE12 /* female.png in Resources */,
-				839BA52B175D922E0080DA3A /* icon.png in Resources */,
-				839BA52D175D92470080DA3A /* icon.png in Resources */,
 				83F15C47176416FC00057E1F /* type.plist in Resources */,
 				04D7FB031767859A00CF054F /* BackgroundTexture@2x.png in Resources */,
+				0479CA381AD62A6A009ED9DE /* icon@2x.png in Resources */,
 				04D7FB041767859A00CF054F /* Default-568h@2x.png in Resources */,
 				04D7FB051767859A00CF054F /* Default.png in Resources */,
 				0479C99F1AD4F480009ED9DE /* Resource.bundle in Resources */,
 				04D7FB061767859A00CF054F /* Default@2x.png in Resources */,
+				0479CA341AD62A0B009ED9DE /* Images.xcassets in Resources */,
 				04D7FB071767859A00CF054F /* GenericSeparator@2x.png in Resources */,
 				04D7FB081767859A00CF054F /* KeyboardBackgroundTextured@2x.png in Resources */,
 				0479CA321AD61877009ED9DE /* f045@2x.png in Resources */,
@@ -698,6 +706,7 @@
 				04439BC01773728100B429BE /* 404error.png in Resources */,
 				041572C41779F1F600DF483B /* view.png in Resources */,
 				041572C61779FD4900DF483B /* setting.png in Resources */,
+				0479CA371AD62A6A009ED9DE /* icon.png in Resources */,
 				041572C8177A041500DF483B /* display.png in Resources */,
 				041572CA177A0BBC00DF483B /* add.png in Resources */,
 				0479C99E1AD4F480009ED9DE /* ShareSDKLocalizable.strings in Resources */,
@@ -745,6 +754,7 @@
 				830239EA17696B60009A8DC7 /* addPersonViewController.m in Sources */,
 				830239EE17696BAF009A8DC7 /* addTypeViewController.m in Sources */,
 				830239F117696BE4009A8DC7 /* addSubtypeViewController.m in Sources */,
+				045B2C011AF75C0800D1557B /* WebViewController.m in Sources */,
 				830239F417696D33009A8DC7 /* enterTheCategoryViewController.m in Sources */,
 				83ADBD3D17719951006F1F2D /* ASDepthModalViewController.m in Sources */,
 				83ADBD3E17719951006F1F2D /* UIImage+Blur.m in Sources */,
@@ -832,6 +842,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mount/ShareSDK/Connection",
@@ -857,6 +869,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mount/ShareSDK/Connection",

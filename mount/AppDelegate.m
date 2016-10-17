@@ -19,7 +19,8 @@
 {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
+
     UIViewController* deckController;
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:[NSBundle mainBundle]];
@@ -96,6 +97,7 @@
     deckController.rightSize = 10;
     deckController.leftSize=10;
     deckController.shadowEnabled=NO;
+    view.deckController=deckController;
     [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
     return deckController;
 }

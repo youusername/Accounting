@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.login.layer setMasksToBounds:YES];
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"view.png"]];
     [self.login.layer setCornerRadius:10.0];//设置矩形四个圆角半径
      [self.login.layer setBorderWidth:1.0];//边框宽度
     [self.login.layer setBorderColor:[UIColor blackColor].CGColor];
@@ -96,6 +97,7 @@
                                                                                    rightViewController:rightViewController];
     deckController.rightSize = 10;
     deckController.leftSize=10;
+    view.deckController=deckController;
     deckController.shadowEnabled=NO;
     deckController.delegate=self;
     [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];

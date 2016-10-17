@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "IIViewDeckController.h"
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 - (IBAction)bill:(id)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *myImage;
 @property (strong, nonatomic) IBOutlet UITableView *tableOutlet;
-
+@property (strong,nonatomic)IIViewDeckController* deckController;
 @property (strong,nonatomic) NSArray*list;
 @end

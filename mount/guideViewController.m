@@ -64,6 +64,7 @@ self.navigationItem.backBarButtonItem=nil;
                                                                                    rightViewController:rightViewController];
     deckController.rightSize = 20;
     deckController.leftSize=20;
+    view.deckController=deckController;
     deckController.shadowEnabled=NO;
     [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
     return deckController;

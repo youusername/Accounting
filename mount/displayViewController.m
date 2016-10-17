@@ -73,15 +73,6 @@
         
         [self.slices addObject:[NSNumber numberWithFloat:p.amount]];
     }
-
-    //    for(int i = 0; i < 5; i ++)
-    //    {
-    //        NSNumber *one = [NSNumber numberWithInt:rand()%60+20];
-    //        [_slices addObject:one];
-    //    }
-    
-    
-    
     [self.piceChart setDelegate:self];
     [self.piceChart setDataSource:self];
     [self.piceChart setPieCenter:CGPointMake(140, 100)];

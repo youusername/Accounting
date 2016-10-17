@@ -29,6 +29,7 @@
         dic=[[NSMutableDictionary alloc]init];
         [UserDefaults setValue:dic forKey:@"userInfo"];
     }
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"view.png"]];
     [regButton.layer setMasksToBounds:YES];
     [regButton.layer setCornerRadius:10.0];//设置矩形四个圆角半径
     [regButton.layer setBorderWidth:1.0];//边框宽度
